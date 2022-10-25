@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Roboto:wght@300;400;500;600;700&display=swap');
+:root
+{
+  --bg-black-900:#f2f2fc;
+  --bg-black-100:#fdf9ff;
+  --bg-black-50:#e8dfec;
+  --text-black-900:#302e4d;
+  --text-black-700:#504e70; 
+  
+}
+*
+{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body
+{
+  margin:0;
+  padding: 0;
+  line-height: 1.5;
+  font-size: 16px;
+  font-family: 'poppins' sans-serif;
+}
+
+::before,::after
+{
+  box-sizing: border-box;
+}
+
+/* section */
+ul
+{
+  list-style: none;
+}
+.section
+{
+  background: var(--bg-black-900);
+  min-height: 100vh;
+  display: block;
+  position: fixed;
+  left:270px;
+  right: 0;
+  top: 0;
+  z-index: 0;
+  opacity: 1;
+}
+
+/* myweb */
+.myweb
+{
+  width: 270px;
+  padding: 30px;
+  position: fixed;
+  background: var(--bg-black-100);
+  top: 0;
+  height: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.myweb .logo
+{
+  position: absolute;
+  top: 50px;
+  font-size: 30px;
+  text-transform: capitalize;
+  
+}
+.myweb .logo a
+{
+  color: var(--text-black-900);
+  font-weight: 700;
+  padding: 15px 20px;
+  font-size: 30px;
+  letter-spacing: 5px;
+  position: relative;
+}
+.myweb .logo a span
+{
+  font-family: "Clicker Script", cursive;
+  font-family: 40px;
+}
+.myweb .logo a::before
+{
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-bottom: 5px solid var(--skin-color);
+  border-left: 5px solid var(--skin-color);
+  bottom: 0;
+  left: 0;
+}
+.myweb .logo a::after
+{
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-top: 5px solid var(--skin-color);
+  border-right: 5px solid var(--skin-color);
+  top: 0;
+  right: 0;
+}
+.myweb .nav
+{
+  margin-top: 50px;
+}
+.myweb .nav li
+{
+  margin-bottom: 20px;
+  display: block;
+}
+.myweb .nav li a
+{
+  font-size: 16px;
+  font-weight: 600;
+  display: block;
+  color: var(--text-black-900);
+  padding: 5px 15px;
+}
