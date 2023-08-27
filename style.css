@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Clicker+Script&family=Roboto:wght@300;400;500;600;700&display=swap");
 :root {
-  --bg-black-900: #f2f2fc;
-  --bg-black-100: #fdf9ff;
+  --bg-black-900: #C4DFDF;
+  --bg-black-100: #E3F4F4;
   --bg-black-50: #e8dfec;
   --text-black-900: #302e4d;
   --text-black-700: #504e70;
@@ -544,7 +544,7 @@ h3.my-profession {
 }
 .portfolio .portfolio-item-inner .portfolio-img img {
   max-width: 100%;
-  max-height: 188.45px;
+  height: 188.45px;
   width: 100%;
   display: block;
 }
