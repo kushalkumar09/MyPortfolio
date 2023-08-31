@@ -621,6 +621,8 @@ h3.my-profession {
 .contact .contact-form .btn {
   height: 50px;
   padding: 0 50px;
+  cursor: pointer;
+  
 }
 @media (max-width: 1199px) {
   .myweb {

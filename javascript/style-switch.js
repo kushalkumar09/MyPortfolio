@@ -1,28 +1,24 @@
 // ================ Toggler Style Switcher ===================  //
 const styleSwitcherToggler = document.querySelector(".style-switcher-toggler");
-styleSwitcherToggler.addEventListener("click", () =>{
+styleSwitcherToggler.addEventListener("click", () => {
   document.querySelector(".style-switcher").classList.toggle("open");
-})
+});
 // hide style on scroll
-window.addEventListener("scroll", () =>{
-  if(document.querySelector(".style-switcher").classList.contains("open"))
-  {
+window.addEventListener("scroll", () => {
+  if (document.querySelector(".style-switcher").classList.contains("open")) {
     document.querySelector(".style-switcher").classList.remove("open");
   }
-})
+});
 // theme colors
 const alternateStyle = document.querySelectorAll(".alternate-style");
-function setActiveStyle(color)
-{
+function setActiveStyle(color) {
   alternateStyle.forEach((style) => {
-    if(color === style.getAttribute("title"))
-    {
+    if (color === style.getAttribute("title")) {
       style.removeAttribute("disabled");
+    } else {
+      style.setAttribute("disabled", "true");
     }
-    else{
-      style.setAttribute("disabled","true");
-    }
-  })
+  });
 }
 // const styleSwitcherToggle = document.querySelector(".style-switcher-toggler");
 // styleSwitcherToggle.addEventListener("click", () =>{
@@ -30,16 +26,45 @@ function setActiveStyle(color)
 // })
 // ===== theme light and dark mode ===== //
 const dayNight = document.querySelector(".day-night");
-dayNight.addEventListener("click", () =>{
+dayNight.addEventListener("click", () => {
   dayNight.querySelector("i").classList.toggle("fa-sun");
   dayNight.querySelector("i").classList.toggle("fa-moon");
   document.body.classList.toggle("dark");
-})
-window.addEventListener("load", () =>{
-  if(document.body.classList.contains("dark")){
+});
+window.addEventListener("load", () => {
+  if (document.body.classList.contains("dark")) {
     dayNight.querySelector("i").classList.add("fa-sun");
-  }
-  else{
+  } else {
     dayNight.querySelector("i").classList.add("fa-moon");
   }
-})
+});
+
+//contact field check if missing or not
+
+function sendMail() {
+  (function () {
+    emailjs.init("3PdFlw5Kfm5GaKLr1");
+  })();
+
+  var params = {
+    sendername: document.querySelector("#sendername").value,
+    // to: document.querySelector("#to").value,
+    replyto: document.querySelector("#replyto").value,
+    subject: document.querySelector("#subject").value,
+    message: document.querySelector("#message").value,
+  };
+  var serviceID = "service_xrpvdjy";
+  var templetID = "template_5dm425d";
+  var urInput = document.querySelectorAll("#sendername");
+  if (urInput.validity.valueMissing) {
+    alert("Missing Input values");
+  }
+  else{
+    emailjs.send(serviceID, templetID, params).then((res) => {
+      alert("Email sent Successfully");
+    })
+    .catch();
+  }
+
+  
+}
